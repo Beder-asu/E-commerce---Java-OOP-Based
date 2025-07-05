@@ -3,7 +3,7 @@ Getting Started
 To compile and run the main application from the command line:
 
 1. Open Command Prompt and navigate to your project directory:
-   cd "<your-project-directory>"
+   cd "<your-project-directory>" (should look something like: C:\Users\your-user\folder\Project)
 2. Compile the Java source files (including dependencies in lib):
    javac -cp "lib/*;src" -d bin src\App.java src\test\TestSuite.java src\models\*.java src\services\*.java
 3. Run the application:
