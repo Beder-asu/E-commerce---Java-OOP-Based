@@ -3,7 +3,7 @@ package models;
 import java.time.LocalDate;
 
 public class ShippableProduct extends Product implements Shippable {
-    private double weight; // in grams or kilograms
+    private double weight; // in kilograms
 
 
     public ShippableProduct(String name, double price, double quantity,

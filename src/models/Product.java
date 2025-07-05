@@ -63,7 +63,7 @@ public abstract class Product{
         this.quantity -= amount;
     }
 
-    // Getters and Setters
+
     public int getId() {
         return id;
     }

@@ -10,6 +10,7 @@ To compile and run the main application from the command line:
    java -cp "lib/*;bin" App
 
 This will execute the App.java file, which runs your test suite or main application logic. Replace <your-project-directory> with the path to your own project folder.
+OR- via any IDE
 
 Folder Structure
 

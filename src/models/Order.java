@@ -36,13 +36,27 @@ public class Order {
     }
 
     // Getters
-    public int getId() { return id; }
-    public Customer getCustomer() { return customer; }
-    public Map<Product, Integer> getItems() { return items; }
-    public double getSubtotal() { return subtotal; }
-    public double getShippingCost() { return shippingCost; }
-    public double getTotalAmount() { return totalAmount; }
-    public LocalDateTime getCreatedAt() { return createdAt; }
+    public int getId() { 
+        return id; 
+    }
+    public Customer getCustomer() { 
+        return customer; 
+    }
+    public Map<Product, Integer> getItems() { 
+        return items; 
+    }
+    public double getSubtotal() { 
+        return subtotal; 
+    }
+    public double getShippingCost() { 
+        return shippingCost; 
+    }
+    public double getTotalAmount() { 
+        return totalAmount; 
+    }
+    public LocalDateTime getCreatedAt() { 
+        return createdAt; 
+    }
 
     public void printOrder() {
         System.out.println("** Order #" + id + " **");

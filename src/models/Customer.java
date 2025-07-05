@@ -10,7 +10,7 @@ public class Customer {
         this.id = id;
         this.name = name;
         this.email = email;
-        this.balance = 0.0; // Initialize balance
+        this.balance = 0.0; 
     }
 
     public double getBalance() {

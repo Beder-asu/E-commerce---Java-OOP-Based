@@ -12,9 +12,9 @@ import models.Shippable;
 public class EcommerceSys {
 
     private final CartManager cartManager;
-    private final ShippingManager shippingManager;
+    private final ShippingService shippingManager;
 
-    public EcommerceSys(CartManager cartManager, ShippingManager shippingManager) {
+    public EcommerceSys(CartManager cartManager, ShippingService shippingManager) {
         this.cartManager = cartManager;
         this.shippingManager = shippingManager;
     }
@@ -100,7 +100,6 @@ public class EcommerceSys {
 
     
   
-
   
         System.out.println(order);
 
