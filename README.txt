@@ -1,27 +1,59 @@
-Getting Started
+# E-Commerce (Java OOP Based)
 
-To compile and run the main application from the command line:
+## Project Overview and Use Cases
+A modular Java implementation of core e-commerce flows.  
+Supported (or intended) use cases:
+- List/query products
+- Manage a shopping cart (add, update quantity, remove)
+- Validate inventory before checkout
+- Create orders from cart snapshot
+- Simulate payment handling
+- Adjust inventory after successful order
 
-1. Open Command Prompt and navigate to your project directory:
-   cd "<your-project-directory>" (should look something like: C:\Users\your-user\folder\Project)
-2. Compile the Java source files (including dependencies in lib):
-   javac -cp "lib/*;src" -d bin src\App.java src\test\TestSuite.java src\models\*.java src\services\*.java
-3. Run the application:
-   java -cp "lib/*;bin" App
+Focus: clear domain separation (product, cart, order, payment, inventory) and replaceable abstractions for future persistence and external integrations.
 
-This will execute the App.java file, which runs your test suite or main application logic. Replace <your-project-directory> with the path to your own project folder.
-OR- via any IDE
+## Tech Stack
+- Language: Java (standard JDK; no framework requirement for core domain)
+- Testing: JUnit
+- Data Layer: In-memory repository stubs (current)
+- Data Base: JBDC
 
-Folder Structure
+## Directory Structures
+```
+src/
+  main/
+    java/
+      domain/
+        product/
+        cart/
+        order/
+        payment/
+        inventory/
+      service/
+      repository/
+        inmem/
+      util/
+  test/
+    java/
+```
+Adjust as concrete classes are introduced (e.g., add adapters for CLI / REST later).
 
-- src/ — Java source code
-  - models/ — domain classes (Product, Customer, Order, etc.)
-  - services/ — business/database logic (DBManager, etc.)
-  - test/ — test classes (TestSuite, etc.)
-  - App.java — main entry point
-- lib/ — external libraries (e.g., sqlite-jdbc)
-- resources/ — database file and schema (e.g., ecommerce.db, schema.pdf)
-- bin/ — compiled output (created after build)
+## Build and Run
+Plain JDK (no dependencies):
+```
+javac -d out $(find src -name "*.java")
+java -cp out com.example.Main
+```
 
-PS
-- The DBTestProgram.java file is a standalone test for database operations. It can be run separately and is not part of the main application flow so it is not included or invoked by App.java.
+Maven (if using):
+```
+mvn clean verify
+mvn exec:java -Dexec.mainClass="com.example.Main"
+```
+
+## Contribution
+1. Create a feature branch from main.
+2. Follow existing package naming and keep domain logic free of infrastructure details.
+3. Add or update tests for new or changed behavior.
+4. Use clear commit messages (scope + intent).
+5. Open a pull request describing the change and any impact on existing flows.
